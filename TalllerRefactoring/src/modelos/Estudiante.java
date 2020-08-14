@@ -12,6 +12,8 @@ public class Estudiante{
     public String direccion;
     public String telefono;
     public ArrayList<Paralelo> paralelos;
+    // double nexamen,double ndeberes, double nlecciones, double ntalleres
+    public ArrayList<double> notas= new ArrayList<>();
     
     //Getter y setter de Matricula
 
@@ -78,13 +80,13 @@ public class Estudiante{
         this.telefono = telefono;
     }
     
-    // Realiza en cálculo de las notas inicial y final 
-    public double CalcularNota(Paralelo p, double nexamen,double ndeberes, double nlecciones, double ntalleres){
+    // Realiza en cálculo de las notas parciales ya sea inicial o final.
+    public double CalcularNota(Paralelo p, ArrayList<double> notas){
         double nota=0;
         for(Paralelo par:paralelos){
             if(p.equals(par)){
-                double notaTeorico=(nexamen+ndeberes+nlecciones)*0.80;
-                double notaPractico=(ntalleres)*0.20;
+                double notaTeorico= (notas[0]+notas[1]+notas[2])*0.80;
+                double notaPractico=(notas[3])*0.20;
                 nota=notaTeorico+notaPractico;
             }
         }
