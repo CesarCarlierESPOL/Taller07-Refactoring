@@ -9,7 +9,6 @@ public class Profesor {
     public int edad;
     public String direccion;
     public String telefono;
-    public InformacionAdicionalProfesor info;
     public ArrayList<Paralelo> paralelos;
 
     public Profesor(String codigo, String nombre, String apellido, int edad, String direccion, String telefono) {
@@ -26,11 +25,7 @@ public class Profesor {
         paralelos.add(p);
     }
     
-    public double calcularSueldo(){
-        double sueldo=0;
-        sueldo= info.añosdeTrabajo*600 + info.BonoFijo;
-        return sueldo;
-    }
+    
     
     
 }
